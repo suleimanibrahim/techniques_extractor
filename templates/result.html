@@ -46,7 +46,6 @@
 			left: 150px;
 		}
 
-		/* Make the columns the same height as each other */
 		#container {
 			overflow: hidden;
 		}
@@ -55,12 +54,9 @@
 			padding-bottom: 1001em;
 			margin-bottom: -1000em;
 		}
-
-		/* Fix for the footer */
 		* html body {
 			overflow: hidden;
 		}
-		
 		* html #footer-wrapper {
 			float: left;
 			position: relative;
@@ -95,7 +91,7 @@
 
 		#header {
 			font-size: large;
-			padding: 0.3em;
+			padding: 3em;
 			color: #fff;
 			background: #990033;
 		}
@@ -106,6 +102,9 @@
 		}
 		
 		#footer {
+			display: flex;
+			justify-content: center;
+			align-items: center;
 			font-size: large;
 			padding: 0.3em;
 			color: #666633;
@@ -273,6 +272,12 @@
 		  color: #f44336;
 		  cursor: pointer;
 		}
+		.logo {
+        font-size: 3rem;
+        font-weight: bolder;
+        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+          "Lucida Sans", Arial, sans-serif;
+      }
 
 		/* Clear floats */
 		.clearfix::after {
@@ -330,14 +335,28 @@
 		
 	</script>
 
-	<header id="header"><a href="{{ url_for('home')}}"><img style="margin: 0 0 0 25px;" src="/static/rcattlogo.png" alt="rcATT" height="80"/></a>
+	<header id="header">
+	<span class="logo"> Automated Threat Intelligence Model (ATIM)</span>
 	<form action="{{ url_for('retrain')}}" method="POST">
-		<input type="submit" class="button" style="float: right; font-size: 60px; font-weight: bold; padding: 0 15px 5px 15px; margin: -85px 0 0 0;" name="retrain" value="&#9881;" title="Retrain the tool">
+		<input type="submit" class="button" style="float: right; font-size: 60px; font-weight: bold; padding: 0 15px 5px 15px; margin: -65px 0 0 0;" name="retrain" value="&#9881;" title="Retrain the tool">
 	</form></header>
 
 	<div id="container">
 	<main id="center" class="column">
-	<h4>rcATT is a python tool to predict ATT&amp;CK tactics and techniques from cyber threat reports. Paste your report in the text area so it can be predicted. Tactics and techniques displayed in a darker colored background are predicted as included in the report. The percentage displayed next to the name of the tactic/technique is the likelihood of this tactic/technique of being in the report. If the tactic/technique is indicated as not being in the report, despite the displayed likelihood, it is due to the post-processing in our model. If you disagree with the prediction, you can correct these results and save them to the training set to improve it.</h4>
+		<h4>
+            Automated threat intelligence model (ATIM) is a python app that
+            predict ATT&amp;CK tactics and techniques from cyber threat reports
+            in an organization using Machine Learning. Paste your report in the
+            text area so it can be predicted and the tactics and techniques
+            would be extracted. Tactics and techniques displayed in a darker
+            colored background are predicted as included in the report. The
+            percentage displayed next to the name of the tactic/technique is the
+            likelihood of this tactic/technique of being in the report. If the
+            tactic/technique is indicated as not being in the report, despite
+            the displayed likelihood, it is due to the post-processing in our
+            model. If you disagree with the prediction, you can correct these
+            results and save them to the training set to improve it.
+          </h4>
 	<div class="row">
 		<div class="columnmain">
 		<form action="{{ url_for('predict')}}" method="POST">
@@ -429,8 +448,8 @@
 	<div id="right" class="column">
 	</div>
 		
-	<div id="footer-wrapper">
-		<footer id="footer"><h5> Created by Valentine Legoy, as part of her MSc thesis on &ldquo;Retrieving ATT&amp;CK tactics and techniques in cyber threat reports&rdquo;, at the University of Twente and in partnership with Siemens.</h5></footer>
+	<div  id="footer-wrapper">
+		<footer id="footer"><h5> Alright reserved 2024.</h5></footer>
 		<!-- link to github code+link to paper-->
 	</div>
 	<!-- The Modal (contains the saving form) -->

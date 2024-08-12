@@ -67,7 +67,7 @@ def train(cmd):
 	# load all possible data
 	train_data_df = pd.read_csv('classification_tools/data/training_data_original.csv', encoding = "ISO-8859-1")
 	train_data_added = pd.read_csv('classification_tools/data/training_data_added.csv', encoding = "ISO-8859-1")
-	train_data_df.append(train_data_added, ignore_index = True)
+	train_data_df = pd.concat([train_data_df, train_data_added], ignore_index=True)
 
 	train_data_df = prp.processing(train_data_df)
 
