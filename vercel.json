@@ -3,11 +3,5 @@
       "run_script.py": {
         "runtime": "python3.9"
       }
-    },
-    "builds": [
-      {
-        "src": "api/run_script.py",
-        "use": "@vercel/python"
-      }
-    ]
+    }
   }
