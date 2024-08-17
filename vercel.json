@@ -1,0 +1,13 @@
+{
+    "functions": {
+      "/run_script.py": {
+        "runtime": "python3.9.8"
+      }
+    },
+    "builds": [
+      {
+        "src": "api/run_script.py",
+        "use": "@vercel/python"
+      }
+    ]
+  }
