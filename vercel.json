@@ -1,7 +1,7 @@
 {
     "functions": {
-      "/run_script.py": {
-        "runtime": "python3.9.8"
+      "run_script.py": {
+        "runtime": "python3.9"
       }
     },
     "builds": [
