@@ -1,7 +1,7 @@
 {
     "functions": {
       "api/run_script.py": {
-        "runtime": "@vercel/python"
+        "runtime": "@vercel/python@3.9"
       }
     }
   }
