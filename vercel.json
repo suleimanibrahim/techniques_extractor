@@ -1,7 +1,9 @@
 {
-    "functions": {
-      "api/run_script.py": {
-        "runtime": "vercel/python@3.12.2"
-      }
-    }
-  }
+  "version": 2,
+  "builds": [
+    { "src": "api/run_script.py", "use": "@vercel/python" }
+  ],
+  "routes": [
+    { "src": "/api/run_script", "dest": "api/run_script.py" }
+  ]
+}
